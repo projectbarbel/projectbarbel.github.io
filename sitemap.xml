@@ -8,9 +8,18 @@
 <url> <loc>https://www.projectbarbel.org/blog/2017/09/25/testing-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://www.projectbarbel.org/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://www.projectbarbel.org/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://www.projectbarbel.org/docs/doc1</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/doc1" /> </url>
-<url> <loc>https://www.projectbarbel.org/docs/doc2</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/doc2" /> </url>
-<url> <loc>https://www.projectbarbel.org/docs/doc3</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/doc3" /> </url>
-<url> <loc>https://www.projectbarbel.org/docs/doc4</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/doc4" /> </url>
-<url> <loc>https://www.projectbarbel.org/docs/doc5</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/doc5" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/about</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/about" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/acknowledge</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/acknowledge" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/download</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/download" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/examples</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/examples" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/getstarted</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/getstarted" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/inmemory</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/inmemory" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/license</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/license" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/modes</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/modes" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/persistence</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/persistence" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/readme</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/readme" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/release</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/release" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/repo</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/repo" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/support</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/support" /> </url>
+<url> <loc>https://www.projectbarbel.org/docs/usecases</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://www.projectbarbel.org/docs/usecases" /> </url>
 </urlset>
