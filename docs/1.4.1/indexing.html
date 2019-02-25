@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Adding indexes · BarbelHisto</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;See the &lt;a href=&quot;https://github.com/npgall/cqengine&quot;&gt;cqengine documentation&lt;/a&gt; for adding indexes and then, again, add your custom collection as backbone collection as described previously using the &lt;code&gt;BarbelHistoBuilder&lt;/code&gt; class. Here is an example of adding an indexed collection as backbone. First define the index field.&lt;/p&gt;
+"/><meta name="docsearch:version" content="1.4.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Adding indexes · BarbelHisto"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.projectbarbel.org/index.html"/><meta property="og:description" content="&lt;p&gt;See the &lt;a href=&quot;https://github.com/npgall/cqengine&quot;&gt;cqengine documentation&lt;/a&gt; for adding indexes and then, again, add your custom collection as backbone collection as described previously using the &lt;code&gt;BarbelHistoBuilder&lt;/code&gt; class. Here is an example of adding an indexed collection as backbone. First define the index field.&lt;/p&gt;
+"/><meta property="og:image" content="https://www.projectbarbel.org/img/logo_blau_weiss_klein.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.projectbarbel.org/img/logo_blau_weiss_klein.png"/><link rel="shortcut icon" href="/img/small_barbel.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/small_barbel.png" alt="BarbelHisto"/><h2 class="headerTitleWithLogo">BarbelHisto</h2></a><a href="/versions"><h3>1.4.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/1.4.1/about" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Documentation</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">BarbelHisto<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/1.4.1/about">About</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/license">License</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/download">Download</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Documentation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/1.4.1/getstarted">Get started with POJOs</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/bitemporal">Mode BITEMPORAL</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/timeshift">Journey through time</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/persistence">Adding persistence</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/1.4.1/indexing">Adding indexes</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/customization">Customizing BarbelHisto</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Project Details<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/1.4.1/support">Getting Support</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/acknowledge">Acknowledgements</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/repo">Source Repository</a></li><li class="navListItem"><a class="navItem" href="/docs/1.4.1/releasenotes">Release Notes</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Adding indexes</h1></header><article><div><span><p>See the <a href="https://github.com/npgall/cqengine">cqengine documentation</a> for adding indexes and then, again, add your custom collection as backbone collection as described previously using the <code>BarbelHistoBuilder</code> class. Here is an example of adding an indexed collection as backbone. First define the index field.</p>
+<pre><code class="hljs css language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> SimpleAttribute<span class="token generics function"><span class="token punctuation">&lt;</span>Object<span class="token punctuation">,</span> String<span class="token punctuation">></span></span> VERSION_ID_PK <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleAttribute</span><span class="token generics function"><span class="token punctuation">&lt;</span>Object<span class="token punctuation">,</span> String<span class="token punctuation">></span></span><span class="token punctuation">(</span>
+        <span class="token string">"documentId"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> String <span class="token function">getValue</span><span class="token punctuation">(</span>Object object<span class="token punctuation">,</span> QueryOptions queryOptions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>Bitemporal<span class="token punctuation">)</span>object<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBitemporalStamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getVersionId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>POJOs get passed as <code>Bitemporal</code> proxies, thats why you can cast them to <code>Bitemporal</code> to get access to the Version information via the <code>BitemporalStamp</code>
+Then add the backbone collection to <code>BarbelHisto</code>.</p>
+<pre><code class="hljs css language-java">BarbelHisto<span class="token generics function"><span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span> core <span class="token operator">=</span> BarbelHistoBuilder<span class="token punctuation">.</span><span class="token function">barbel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withBackboneSupplier</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">{</span>
+                    IndexedCollection<span class="token generics function"><span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span> backbone <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ConcurrentIndexedCollection</span><span class="token generics function"><span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    backbone<span class="token punctuation">.</span><span class="token function">addIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span>Index<span class="token generics function"><span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span><span class="token punctuation">)</span> NavigableIndex<span class="token punctuation">.</span><span class="token function">onAttribute</span><span class="token punctuation">(</span>VERSION_ID_PK<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> backbone<span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/1.4.1/persistence"><span class="arrow-prev">← </span><span>Adding persistence</span></a><a class="docs-next button" href="/docs/1.4.1/customization"><span>Customizing</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/small_barbel.png" alt="BarbelHisto" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getstarted.html">Getting Started</a></div><div><h5>Community</h5><a href="https://groups.google.com/d/forum/barbelhisto-developers">Developer user group</a><a href="https://github.com/projectbarbel/barbelhisto-core/issues">Report issue</a></div><div><h5>More</h5><a href="https://github.com/projectbarbel/barbelhisto-core">GitHub</a><a class="github-button" href="https://github.com/projectbarbel/barbelhisto-core" data-icon="octicon-star" data-count-href="/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="BarbelHisto">Star</a></div></section><section class="copyright">Copyright © 2019 Niklas Schlimm</section></footer></div></body></html>
