@@ -63,6 +63,13 @@
 <br>
 <a href="https://search.maven.org/search?q=g:%22org.projectbarbel%22%20AND%20a:%22barbelhisto-persistence-mongo%22"><img src="https://img.shields.io/maven-central/v/org.projectbarbel/barbelhisto-persistence-mongo.svg?label=Maven%20Central" align="left">Mongo persistence listeners</a></p>
 <p>And you nee the <a href="https://mongodb.github.io/mongo-java-driver/">MongoDB Java Driver</a> 3.10.1 or higher.</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mongodb<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mongodb-driver-sync<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.10.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
 <p>Develop a Pojo, like this one:</p>
 <pre><code class="hljs css language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
 
