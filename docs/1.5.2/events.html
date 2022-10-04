@@ -77,26 +77,26 @@
 <p>Listeners to these events are implemented as the following examples:</p>
 <pre><code class="hljs css language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UpdateEventListeners</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Subscribe</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInitialization</span><span class="token punctuation">(</span>BarbelInitializedEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInitialization</span><span class="token punctuation">(</span><span class="token class-name">BarbelInitializedEvent</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// ... handle event</span>
     <span class="token punctuation">}</span>
     <span class="token annotation punctuation">@Subscribe</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInserts</span><span class="token punctuation">(</span>InsertBitemporalEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInserts</span><span class="token punctuation">(</span><span class="token class-name">InsertBitemporalEvent</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// ... handle event</span>
     <span class="token punctuation">}</span>
     <span class="token annotation punctuation">@Subscribe</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleReplacements</span><span class="token punctuation">(</span>ReplaceBitemporalEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleReplacements</span><span class="token punctuation">(</span><span class="token class-name">ReplaceBitemporalEvent</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// ... handle event</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">"unchecked"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LazyLoadingListener</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Subscribe</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleRetrieveData</span><span class="token punctuation">(</span>RetrieveDataEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleRetrieveData</span><span class="token punctuation">(</span><span class="token class-name">RetrieveDataEvent</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// ... handle event</span>
     <span class="token punctuation">}</span>
     <span class="token annotation punctuation">@Subscribe</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInitializeJournal</span><span class="token punctuation">(</span>InitializeJournalEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInitializeJournal</span><span class="token punctuation">(</span><span class="token class-name">InitializeJournalEvent</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// ... handle event</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -104,7 +104,7 @@
 <p>Use the <code>@Subscribe</code> annotation to subscribe the handler method to the event declared as parameter. The event passed contains the <code>eventContext</code> that can be used to drive processing. It contains an instance of the <code>DocumentJournal</code> that was or will be updated and the like. Clients can use these context parameters to implement sophisticated event handling. The context data is always a copy of what originally happened, so clients cannot harm <code>BarbelHisto</code>s internal consistency.</p>
 <h2><a class="anchor" aria-hidden="true" id="register-listeners"></a><a href="#register-listeners" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Register listeners</h2>
 <p>To put listener classes in action clients register instances of the listener classes with <code>BarbelHistoBuilder</code>.</p>
-<pre><code class="hljs css language-java">BarbelHisto<span class="token generics function"><span class="token punctuation">&lt;</span>DefaultDocument<span class="token punctuation">></span></span> core <span class="token operator">=</span> BarbelHistoBuilder<span class="token punctuation">.</span><span class="token function">barbel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withMode</span><span class="token punctuation">(</span>BarbelMode<span class="token punctuation">.</span>BITEMPORAL<span class="token punctuation">)</span>
+<pre><code class="hljs css language-java"><span class="token class-name">BarbelHisto</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">DefaultDocument</span><span class="token punctuation">></span></span> core <span class="token operator">=</span> <span class="token class-name">BarbelHistoBuilder</span><span class="token punctuation">.</span><span class="token function">barbel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withMode</span><span class="token punctuation">(</span><span class="token class-name">BarbelMode</span><span class="token punctuation">.</span>BITEMPORAL<span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">withSynchronousEventListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">LazyLoadingListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>The above snippet shows a registration in the synchronous event bus. Registration with asynchronous bus works accordingly.</p>
@@ -112,7 +112,7 @@
 <p>By default handler methods <strong>fail silently</strong>. This is because subsequent handler methods should still be executed when a previous handler fails. In synchronous scenarios, however, it can be very useful to stop processing if an event handler fails. Clients stop processing by setting the event passed into the handler method to <code>HistoEvent.failed()</code>. As a consequence, <code>BarbelHisto</code> will rollback any changes made to the instance in the running update operation and return an <code>HistoEventFailedException</code> to the client. Here is an example pattern of using the described error handling.</p>
 <pre><code class="hljs css language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ShadowCollectionListeners</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Subscribe</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInserts</span><span class="token punctuation">(</span>InsertBitemporalEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleInserts</span><span class="token punctuation">(</span><span class="token class-name">InsertBitemporalEvent</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">try</span> <span class="token punctuation">{</span>
             <span class="token comment">// some processing that may fail and client wants to handle that situation</span>
         <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -120,7 +120,7 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token annotation punctuation">@Subscribe</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleReplacements</span><span class="token punctuation">(</span>ReplaceBitemporalEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleReplacements</span><span class="token punctuation">(</span><span class="token class-name">ReplaceBitemporalEvent</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">try</span> <span class="token punctuation">{</span>
             <span class="token comment">// some processing that may fail and client wants to handle that situation</span>
         <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>

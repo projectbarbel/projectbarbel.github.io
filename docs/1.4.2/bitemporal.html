@@ -62,17 +62,17 @@
 <pre><code class="hljs css language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DefaultDocument</span> <span class="token keyword">implements</span> <span class="token class-name">Bitemporal</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@DocumentId</span>
-    <span class="token keyword">private</span> String id<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> BitemporalStamp bitemporalStamp<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String data<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">BitemporalStamp</span> bitemporalStamp<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> data<span class="token punctuation">;</span>
 
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> BitemporalStamp <span class="token function">getBitemporalStamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">BitemporalStamp</span> <span class="token function">getBitemporalStamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> bitemporalStamp<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBitemporalStamp</span><span class="token punctuation">(</span>BitemporalStamp stamp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBitemporalStamp</span><span class="token punctuation">(</span><span class="token class-name">BitemporalStamp</span> stamp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>bitemporalStamp <span class="token operator">=</span> stamp<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
@@ -80,9 +80,9 @@
 <span class="token punctuation">}</span>    
 </code></pre>
 <p>Clients have to activate <code>BarbelMode.BITEMPORAL</code> by setting the mode during construction of the <code>BarbelHisto</code> instance.</p>
-<pre><code class="hljs css language-java">BarbelHisto<span class="token generics function"><span class="token punctuation">&lt;</span>DefaultDocument<span class="token punctuation">></span></span> histo <span class="token operator">=</span> 
-                   BarbelHistoBuilder<span class="token punctuation">.</span><span class="token function">barbel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                   <span class="token punctuation">.</span><span class="token function">withMode</span><span class="token punctuation">(</span>BarbelMode<span class="token punctuation">.</span>BITEMPORAL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="hljs css language-java"><span class="token class-name">BarbelHisto</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">DefaultDocument</span><span class="token punctuation">></span></span> histo <span class="token operator">=</span> 
+                   <span class="token class-name">BarbelHistoBuilder</span><span class="token punctuation">.</span><span class="token function">barbel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                   <span class="token punctuation">.</span><span class="token function">withMode</span><span class="token punctuation">(</span><span class="token class-name">BarbelMode</span><span class="token punctuation">.</span>BITEMPORAL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>There is no proxying magic applied in <code>BarbelMode.BITEMPORAL</code> so everything is a bit more explicit, which can be an advantage in many situations:</p>
 <ul>
